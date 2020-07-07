@@ -33,12 +33,12 @@ const updateProgress = () => {
     }
 
     // get seconds
-    let secs = Math.floor(video.currentTime/60);
+    let secs = Math.floor(video.currentTime%60);
     if(secs<10){
         secs = '0'+String(secs);
-
-        timestamp.innerHTML = `${mins}:${secs}`;
     }
+
+    timestamp.innerHTML = `${mins}:${secs}`;
 };
 
 // set video time to progress
